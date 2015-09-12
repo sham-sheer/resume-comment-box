@@ -5,6 +5,7 @@
 # for development and test purposes.
 
 require 'webrick'
+require 'json'
 
 # Default port. Change it if you need.
 port = 3000
@@ -16,6 +17,27 @@ root = File.expand_path './public'
 
 # creating the server is a piece of cake!
 server = WEBrick::HTTPServer.new Port: port, DocumentRoot: root
+
+# Add the ability to respond to a POST request on comments.json
+server.mount_proc '/comments.json' do |req, res|
+  comments = JSON.parse(File.read("#{root}/comments.json"))
+
+  if req.request_method == 'POST'
+    # Assume it's well formed
+    comment = {}
+    req.query.each do |key, value|
+      comment[key] = value.force_encoding('UTF-8')
+    end
+    comments << comment
+    File.write('./comments.json', JSON.pretty_generate(comments, indent: '    '))
+  end
+
+  # always return json
+  res['Content-Type'] = 'application/json'
+  res['Cache-Control'] = 'no-cache'
+  res.body = JSON.generate(comments)
+end
+
 
 # Handle ^C
 trap('INT') { server.shutdown }
