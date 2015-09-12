@@ -7,8 +7,8 @@
 require 'webrick'
 require 'json'
 
-# Default port. Change it if you need.
-port = 3000
+# On heroku the environment variable should be used.
+port = ENV['PORT'].nil? ? 3000 : ENV['PORT'].to_i
 
 puts "Super Simple Ruby Http Server started: http://localhost:#{port}/"
 
