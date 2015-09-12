@@ -1,5 +1,5 @@
 var CommentList = React.createClass({
-  render function() {
+  render: function() {
     return(
       <div className="commentList">
         Hello, world! I am a react js comment list component!
