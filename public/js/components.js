@@ -73,6 +73,12 @@ var CommentBox = React.createClass({
     });
   },
   handleCommentSubmit: function(comment) {
+    //Do not wait until the request is finished. Add the comment on the list right 
+    //after its inclusion.
+    var currentComments = this.state.data;
+    var newComments = comments.concat([comment]);
+    this.setState({data: newComments});
+
     $.ajax({
       url: this.props.url,
       dataType: 'json',
