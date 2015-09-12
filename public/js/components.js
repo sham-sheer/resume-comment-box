@@ -76,7 +76,7 @@ var CommentBox = React.createClass({
     //Do not wait until the request is finished. Add the comment on the list right 
     //after its inclusion.
     var currentComments = this.state.data;
-    var newComments = comments.concat([comment]);
+    var newComments = currentComments.concat([comment]);
     this.setState({data: newComments});
 
     $.ajax({

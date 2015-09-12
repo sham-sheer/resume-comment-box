@@ -7,7 +7,7 @@ This is the React JS comment box tutorial [https://github.com/jcfausto/reactjs-c
 ```sh
 $ git clone https://github.com/jcfausto/reactjs-comment-box.git
 $ cd reactjs-comment-box
-$ ruby server.rb
+$ ruby bin/server.rb
 ```
 
 Visit: [http://localhost:3000/](http://localhost:3000/)
