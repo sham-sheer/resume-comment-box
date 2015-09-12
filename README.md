@@ -11,6 +11,7 @@ $ git clone https://github.com/jcfausto/reactjs-comment-box.git
 $ cd reactjs-comment-box
 $ ruby bin/server.rb
 ```
+Visit: [http://localhost:3000/](http://localhost:3000/)
 
 ## How to deploy on heroku
 
@@ -20,5 +21,3 @@ $ heroku create
 $ git push heroku master
 $ heroku open
 ```
-
-Visit: [http://localhost:3000/](http://localhost:3000/)
