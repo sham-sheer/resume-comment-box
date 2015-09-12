@@ -1,3 +1,13 @@
+var CommentList = React.createClass({
+  render function() {
+    return(
+      <div className="commentList">
+        Hello, world! I am a react js comment list component!
+      </div>
+    );
+  }
+});
+
 var CommentBox = React.createClass({
 
   render: function(){
