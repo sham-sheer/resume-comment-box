@@ -1,6 +1,3 @@
-# Author: Julio Cesar Fausto.
-# Created at: 11/09/2015.
-#
 # This super simple ruby http server is provided only
 # for development and test purposes.
 
